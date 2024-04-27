@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure the padding and border are included in the width */
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .delete-button {
+            padding: 5px 10px;
+            background-color: #f44336; 
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 3px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .delete-button:hover {
+            background-color: #d32f2f; 
+        }
+        .back-to-main-menu {
+            background-color: #2196F3; 
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            position: fixed; 
+            bottom: 20px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+
+        .back-to-main-menu:hover {
+            background-color: #1976D2; 
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Add New Patient</h1>
+    <form action="/add_patient" method="POST">
+        <label for="patient_id">Patient ID:</label><br>
+        <input type="text" id="patient_id" name="patient_id" required><br>
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br>
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br>
+        <label for="contact_number">Contact Number:</label><br>
+        <input type="text" id="contact_number" name="contact_number"><br>
+        <label for="medical_history">Medical History:</label><br>
+        <textarea id="medical_history" name="medical_history"></textarea><br>
+        <label for="allergies">Allergies:</label><br>
+        <textarea id="allergies" name="allergies"></textarea><br>
+        <button type="submit">Add Patient</button>
+    </form>
+
+    <!-- Navigation buttons -->
+    <div class="navigation">
+        <a href="/patients"><button class="delete-button">Back to Patients</button></a>
+        <a href="/"><button class="back-to-main-menu">Main Menu</button></a>
+    </div>
+</div>
+
+</body>
+</html>

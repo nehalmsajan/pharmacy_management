@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prescriptions Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Prescriptions Information</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>PrescriptionID</th>
+                <th>PatientID</th>
+                <th>DrugID</th>
+                <th>PrescribingPhysician</th>
+                <th>DosageInstructions</th>
+                <th>PrescriptionDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/" method="get">
+        <input type="submit" value="Back to Main Menu" class="back-to-main-menu">
+    </form>
+</body>
+</html>
